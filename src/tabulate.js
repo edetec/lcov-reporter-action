@@ -105,10 +105,10 @@ function uncovered(file, options) {
 		.map(function(range) {
 			const fragment = range.start === range.end ? `L${range.start}` : `L${range.start}-L${range.end}`
 			const relative = file.file.replace(options.prefix, "")
-			const href = `https://github.com/${options.repository}/blob/${options.commit}/${relative}#${fragment}`
-			const text = range.start === range.end ? range.start : `${range.start}&ndash;${range.end}`
+			// const href = `https://github.com/${options.repository}/blob/${options.commit}/${relative}#${fragment}`
+			const text = range.start === range.end ? range.start.toString() : `${range.start}&ndash;${range.end}`
 
-			return a({ href }, text)
+			return span(text)
 		})
 		.join(", ")
 }

@@ -162,12 +162,7 @@ test("tabulate should generate a correct table", function() {
 				td(b("66.67%")),
 				td(b("91.30%")),
 				td(
-					a(
-						{
-							href: `https://github.com/${options.repository}/blob/${options.commit}/src/foo.js#L37`,
-						},
-						37,
-					),
+					span('37'),
 				),
 			),
 			tr(td({ colspan: 6 }, b("src/bar"))),
@@ -186,19 +181,9 @@ test("tabulate should generate a correct table", function() {
 				td(b("66.67%")),
 				td(b("50%")),
 				td(
-					a(
-						{
-							href: `https://github.com/${options.repository}/blob/${options.commit}/src/bar/baz.js#L20-L21`,
-						},
-						'20&ndash;21',
-					),
+					span('20&ndash;21'),
 					', ',
-					a(
-						{
-							href: `https://github.com/${options.repository}/blob/${options.commit}/src/bar/baz.js#L27`,
-						},
-						'27',
-					),
+					span('27'),
 				),
 			),
 		),
